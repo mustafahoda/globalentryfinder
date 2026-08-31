@@ -14,13 +14,13 @@ const SITE_URL = "https://www.globalentryfinder.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "GlobalEntryFinder — Which Appointment Finder Should You Use?",
+    default: "Best Global Entry Appointment Finder for 2026 (Compared)",
     template: "%s | GlobalEntryFinder",
   },
   description:
     "Answer two questions and we'll tell you which Global Entry appointment-alert service fits your situation, plus a full price and feature comparison.",
   openGraph: {
-    title: "GlobalEntryFinder — Which Appointment Finder Should You Use?",
+    title: "Best Global Entry Appointment Finder for 2026 (Compared)",
     description:
       "Answer two questions and we'll tell you which Global Entry appointment-alert service fits your situation.",
     url: SITE_URL,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "GlobalEntryFinder — Which Appointment Finder Should You Use?",
+    title: "Best Global Entry Appointment Finder for 2026 (Compared)",
     description:
       "Answer two questions and we'll tell you which Global Entry appointment-alert service fits your situation.",
   },
