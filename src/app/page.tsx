@@ -53,10 +53,10 @@ export default function HomePage() {
       <nav className="flex items-center gap-8 py-4 px-5 sm:px-8 md:px-16">
         <span className="font-semibold text-lg mr-auto">GlobalEntryFinder</span>
         <a href="#which" className="text-sm hover:text-accent">
-          Which finder
+          Quiz
         </a>
         <a href="#compare" className="text-sm hover:text-accent">
-          All eight compared
+          Compare
         </a>
         <a href="#faq" className="text-sm hover:text-accent">
           FAQ
