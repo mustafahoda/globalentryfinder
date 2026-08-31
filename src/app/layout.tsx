@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={serif.variable}>
       <body className="bg-bg text-ink font-serif antialiased">{children}</body>
-      <GoogleAnalytics gaId="G-THQ2K911JB" />
+      <GoogleAnalytics gaId="G-4BZFB88P2L" />
     </html>
   );
 }
