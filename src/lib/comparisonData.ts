@@ -8,6 +8,7 @@ export interface ServiceRow {
   slug: string;
   name: string;
   price: string;
+  duration: string;
   locations: string;
   delivery: string;
   dayOfWeekFiltering: boolean;
@@ -16,15 +17,14 @@ export interface ServiceRow {
   isSnapslot?: boolean;
   /** "hosted" = a paid/free SaaS you sign up for; "self-hosted" = you run the code yourself. */
   kind: "hosted" | "self-hosted";
-  /** What it takes to get running -- trivial for hosted services, real work for self-hosted ones. */
-  setup: string;
 }
 
 export const services: ServiceRow[] = [
   {
     slug: "snapslot",
     name: "Snapslot",
-    price: "$20 one-time (31 days)",
+    price: "$20 one-time",
+    duration: "31 days",
     locations: "Up to 5",
     delivery: "SMS",
     dayOfWeekFiltering: true,
@@ -32,79 +32,78 @@ export const services: ServiceRow[] = [
     url: "https://snapslot.co/signup?utm_source=globalentryfinder&utm_medium=referral&utm_campaign=comparison&utm_content=table",
     isSnapslot: true,
     kind: "hosted",
-    setup: "None — sign up and go",
   },
   {
     slug: "appointment-scanner",
     name: "Appointment Scanner",
-    price: "$29 one-time (1 month)",
+    price: "$29 one-time",
+    duration: "1 month",
     locations: "Up to 3",
     delivery: "SMS, email, or browser",
     dayOfWeekFiltering: false,
     freeOptionAvailable: false,
     url: "https://appointmentscanner.com",
     kind: "hosted",
-    setup: "None — sign up and go",
   },
   {
     slug: "ttptracker",
     name: "TTPTracker",
-    price: "One-time (30 days); free browser-only tier available",
+    price: "$27.99 one-time; free browser-only tier available",
+    duration: "30 days (paid) / ongoing (free tier)",
     locations: "Up to 3",
     delivery: "SMS (paid) or browser (free)",
     dayOfWeekFiltering: true,
     freeOptionAvailable: true,
     url: "https://ttptracker.com",
     kind: "hosted",
-    setup: "None — sign up and go",
   },
   {
     slug: "ttp-appointments",
     name: "TTP Appointments",
-    price: "Free tier, or $24.99 one-time Premium (1 month)",
+    price: "Free tier, or $24.99 one-time Premium",
+    duration: "Ongoing (free) / 1 month (Premium)",
     locations: "1 (free) / Up to 5 (Premium)",
     delivery: "Email (free) or SMS + email (Premium)",
     dayOfWeekFiltering: false,
     freeOptionAvailable: true,
     url: "https://ttpappointments.com",
     kind: "hosted",
-    setup: "None — sign up and go",
   },
   {
     slug: "global-entry-alerts",
     name: "Global Entry Alerts",
-    price: "$19.99 one-time (30 days)",
+    price: "$19.99 one-time",
+    duration: "30 days",
     locations: "Up to 5",
     delivery: "SMS",
     dayOfWeekFiltering: false,
     freeOptionAvailable: false,
     url: "https://globalentryalerts.com",
     kind: "hosted",
-    setup: "None — sign up and go",
   },
   {
     slug: "trusted-traveler-scheduler",
     name: "trusted-traveler-scheduler (GitHub)",
     price: "Free — you provide the hosting",
+    duration: "Ongoing — you keep it running",
     locations: "Any — you configure location IDs",
     delivery: "Discord/webhook, configurable",
     dayOfWeekFiltering: false,
     freeOptionAvailable: true,
     url: "https://github.com/everettsouthwick/trusted-traveler-scheduler",
     kind: "self-hosted",
-    setup: "Docker image or Python 3.7+; you write the config file and keep it running somewhere",
   },
   {
     slug: "goes-notify",
     name: "goes-notify (GitHub)",
     price: "Free — you provide the hosting",
+    duration: "Ongoing — you keep it running",
     locations: "One center + date per config",
     delivery: "macOS alert, Gmail, or console log",
     dayOfWeekFiltering: false,
     freeOptionAvailable: true,
     url: "https://github.com/Drewster727/goes-notify",
     kind: "self-hosted",
-    setup: "Python 2 script; most-starred open-source option, but dated and no longer actively developed",
   },
 ];
 

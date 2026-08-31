@@ -25,6 +25,18 @@ export const metadata: Metadata = {
       "Answer two questions and we'll tell you which Global Entry appointment-alert service fits your situation.",
     url: SITE_URL,
     siteName: "GlobalEntryFinder",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "GlobalEntryFinder — Which Appointment Finder Should You Use?",
+    description:
+      "Answer two questions and we'll tell you which Global Entry appointment-alert service fits your situation.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

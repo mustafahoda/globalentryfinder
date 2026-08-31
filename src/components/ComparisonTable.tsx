@@ -8,7 +8,7 @@ export default function ComparisonTable() {
           <th>Service</th>
           <th>Locations watched</th>
           <th>Delivery</th>
-          <th>Setup</th>
+          <th>Duration</th>
           <th>Price</th>
           <th>Site</th>
         </tr>
@@ -39,7 +39,7 @@ export default function ComparisonTable() {
             </td>
             <td>{s.locations}</td>
             <td>{s.delivery}</td>
-            <td className="max-w-[26ch]">{s.setup}</td>
+            <td>{s.duration}</td>
             <td>
               <span
                 className="font-semibold text-[17px]"

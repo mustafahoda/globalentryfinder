@@ -1,14 +1,53 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import TriageQuiz from "@/components/TriageQuiz";
 import ComparisonTable from "@/components/ComparisonTable";
 import LiveTracker from "@/components/LiveTracker";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
+import { FAQ_ITEMS } from "@/lib/faqData";
 
 const HEADLINE = "Which appointment finder is right for you?";
+const SITE_URL = "https://www.globalentryfinder.com";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "GlobalEntryFinder",
+  url: SITE_URL,
+  description:
+    "An independent comparison of Global Entry appointment-alert services, with a two-question quiz and a live tracker of the official CBP scheduler.",
+};
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       <nav className="flex items-center gap-8 py-4 px-5 sm:px-8 md:px-16">
         <span className="font-semibold text-lg mr-auto">GlobalEntryFinder</span>
         <a href="#which" className="text-sm hover:text-accent">
@@ -16,6 +55,9 @@ export default function HomePage() {
         </a>
         <a href="#compare" className="text-sm hover:text-accent">
           All seven compared
+        </a>
+        <a href="#faq" className="text-sm hover:text-accent">
+          FAQ
         </a>
         <Link href="/privacy" className="text-sm hover:text-accent">
           Privacy
@@ -51,16 +93,18 @@ export default function HomePage() {
           </div>
           <ComparisonTable />
           <p className="text-[15px] leading-[26px] mt-5 max-w-[68ch] text-neutral-700">
-            We didn&apos;t take payment for placement on this page. Snapslot is a sister service
-            to GlobalEntryFinder — same team. The self-hosted options are free, real, open-source
-            projects, but &quot;free&quot; means you&apos;re the one running the code, keeping it
-            online, and troubleshooting it when it breaks — that&apos;s the trade against paying
-            a hosted service to do it for you. None of these services, including Snapslot, book
-            the appointment for you; you always confirm it yourself on the official Trusted
-            Traveler Program website.
+            The self-hosted options are free, real, open-source projects, but &quot;free&quot;
+            means you&apos;re the one running the code, keeping it online, and troubleshooting it
+            when it breaks — that&apos;s the trade against paying a hosted service to do it for
+            you. None of these services, including Snapslot, book the appointment for you; you
+            always confirm it yourself on the official Trusted Traveler Program website.
           </p>
         </div>
 
+        <div id="faq" className="pt-14 sm:pt-20">
+          <h2 className="text-[clamp(24px,2.6vw,30px)] m-0 mb-5">Frequently asked questions</h2>
+          <FaqSection />
+        </div>
       </main>
       <Footer />
     </div>

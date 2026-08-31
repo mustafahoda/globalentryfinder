@@ -36,7 +36,7 @@ const SNAPSLOT_PICK: Omit<Recommendation, "line"> = {
   why: [
     "Texts you the instant a slot opens, up to 5 enrollment centers at once",
     "Day-of-week filtering, so you're only pinged for slots you can actually make",
-    `${snapslot.price}, no auto-renewal`,
+    `${snapslot.price} (${snapslot.duration}), no auto-renewal`,
   ],
   cta: `Check availability at ${snapslot.name}`,
   href: snapslot.url,
