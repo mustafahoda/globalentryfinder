@@ -10,7 +10,7 @@ const serif = Source_Serif_4({
   style: ["normal", "italic"],
 });
 
-const SITE_URL = "https://www.globalentryfinder.com";
+const SITE_URL = "https://globalentryfinder.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

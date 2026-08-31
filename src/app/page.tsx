@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { FAQ_ITEMS } from "@/lib/faqData";
 
 const HEADLINE = "Which appointment finder is right for you?";
-const SITE_URL = "https://www.globalentryfinder.com";
+const SITE_URL = "https://globalentryfinder.com";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
