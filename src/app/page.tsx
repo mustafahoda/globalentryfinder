@@ -54,7 +54,7 @@ export default function HomePage() {
           Which finder
         </a>
         <a href="#compare" className="text-sm hover:text-accent">
-          All seven compared
+          All eight compared
         </a>
         <a href="#faq" className="text-sm hover:text-accent">
           FAQ
@@ -88,17 +88,10 @@ export default function HomePage() {
           <div className="flex items-baseline justify-between gap-6 flex-wrap mb-5">
             <h2 className="text-[clamp(24px,2.6vw,30px)] m-0">Or read the full comparison</h2>
             <span className="text-[15px] text-neutral-700">
-              Five hosted services, plus two open-source tools you run yourself
+              Six hosted services, plus two open-source tools you run yourself
             </span>
           </div>
           <ComparisonTable />
-          <p className="text-[15px] leading-[26px] mt-5 max-w-[68ch] text-neutral-700">
-            The self-hosted options are free, real, open-source projects, but &quot;free&quot;
-            means you&apos;re the one running the code, keeping it online, and troubleshooting it
-            when it breaks — that&apos;s the trade against paying a hosted service to do it for
-            you. None of these services, including Snapslot, book the appointment for you; you
-            always confirm it yourself on the official Trusted Traveler Program website.
-          </p>
         </div>
 
         <div id="faq" className="pt-14 sm:pt-20">

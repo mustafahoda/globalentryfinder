@@ -20,6 +20,11 @@ export const FAQ_ITEMS: FaqItem[] = [
       "A hosted service, like Snapslot or the others in the table, is ready to use the moment you sign up. A self-hosted tool is free, open-source code that you install and run yourself — on a spare computer, a VPS, or similar — and keep online, which is real technical work rather than a signup form.",
   },
   {
+    question: "Is a browser notification a good way to get Global Entry alerts?",
+    answer:
+      "It can be, if the setup fits how you actually use your computer. A browser-based alert (like TTPTracker's free tier) is free and fires instantly while the tab is open — a good fit if you keep a laptop on and awake near you during the hours you're realistically watching. It's a weaker fit if cancellations are likely to post overnight or while you're away from your desk, because the tab has to stay open and your computer has to stay awake to catch them — close the tab, let your laptop sleep, or step away, and you'll miss it entirely. SMS doesn't have that limitation, which is the main trade-off between the two.",
+  },
+  {
     question: "How does the live tracker on this page work?",
     answer:
       "It polls the official CBP Trusted Traveler Program scheduler directly from your browser every five minutes, for a handful of major enrollment centers, and shows the next open slot it finds. It's the same kind of polling the alert services in the comparison table do — just running visibly in your own browser instead of on their servers.",

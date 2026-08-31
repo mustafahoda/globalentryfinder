@@ -16,6 +16,11 @@ export const TRACKED_LOCATIONS: TrackedLocation[] = [
   { id: 5182, code: "ATL", name: "Atlanta" },
   { id: 5441, code: "BOS", name: "Boston (Logan)" },
   { id: 6940, code: "DEN", name: "Denver" },
+  { id: 5444, code: "EWR", name: "Newark" },
+  { id: 5141, code: "IAH", name: "Houston Intercontinental" },
+  { id: 5181, code: "MIA", name: "Miami" },
+  { id: 7960, code: "PDX", name: "Portland, OR" },
+  { id: 12021, code: "STL", name: "St. Louis" },
 ];
 
 export const TTP_SLOTS_ENDPOINT = "https://ttp.cbp.dhs.gov/schedulerapi/slots";
