@@ -1,110 +1,75 @@
-import RadarHero from "@/components/RadarHero";
-import Quiz from "@/components/Quiz";
+import Link from "next/link";
+import TriageQuiz from "@/components/TriageQuiz";
 import ComparisonTable from "@/components/ComparisonTable";
 import Footer from "@/components/Footer";
 
+const HEADLINE = "Which appointment finder is right for you?";
+
 export default function HomePage() {
   return (
-    <main>
-      {/* Hero */}
-      <section className="bg-paper">
-        <div className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="font-mono text-xs tracking-widest text-teal mb-3">
-              GLOBAL ENTRY APPOINTMENT ALERTS, COMPARED
-            </p>
-            <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight text-ink">
-              Find the appointment finder that&apos;s actually right for you.
-            </h1>
-            <p className="mt-4 font-body text-lg text-slate leading-relaxed">
-              A handful of services quietly watch the Trusted Traveler Program scheduler and text
-              or email you the second a canceled Global Entry slot opens up. They&apos;re not all
-              the same. Answer two questions and we&apos;ll tell you which one fits.
-            </p>
-            <a
-              href="#quiz"
-              className="mt-6 inline-flex items-center rounded-md bg-ink px-5 py-3 font-mono text-sm font-semibold text-paper hover:bg-ink-raised transition"
-            >
-              Take the 2-question quiz ↓
-            </a>
-          </div>
-          <RadarHero />
-        </div>
-      </section>
+    <div className="min-h-screen">
+      <nav className="flex items-center gap-8 py-4 px-5 sm:px-8 md:px-16">
+        <span className="font-semibold text-lg mr-auto">GlobalEntryFinder</span>
+        <a href="#which" className="text-sm hover:text-accent">
+          Which finder
+        </a>
+        <a href="#compare" className="text-sm hover:text-accent">
+          All five compared
+        </a>
+        <Link href="/privacy" className="text-sm hover:text-accent">
+          Privacy
+        </Link>
+        <span className="hidden sm:inline-flex items-center text-accent px-2 py-1 text-sm">
+          Updated August 2026
+        </span>
+      </nav>
 
-      {/* Quiz */}
-      <section id="quiz" className="bg-ink py-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <p className="font-mono text-xs tracking-widest text-amber mb-2">TWO QUESTIONS</p>
-            <h2 className="font-display text-3xl font-bold text-paper">Which one should you use?</h2>
-          </div>
-          <Quiz />
-        </div>
-      </section>
+      <main className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 pt-8 sm:pt-12 pb-24">
+        <h1
+          id="which"
+          className="cmyk-head text-[clamp(34px,5vw,56px)] leading-[1.06] tracking-[-0.02em] m-0 max-w-[24ch] -ml-[0.035em]"
+        >
+          <span className="paper" aria-hidden="true">
+            {HEADLINE}
+          </span>
+          <span className="plate plate-c" aria-hidden="true">
+            {HEADLINE}
+          </span>
+          <span className="plate plate-m" aria-hidden="true">
+            {HEADLINE}
+          </span>
+          <span className="plate plate-y" aria-hidden="true">
+            {HEADLINE}
+          </span>
+          <span className="sr-only">{HEADLINE}</span>
+        </h1>
+        <p className="text-[clamp(17px,1.6vw,19px)] leading-[30px] max-w-[56ch] mt-6 text-neutral-800">
+          You&apos;ve refreshed the Global Entry site for weeks and it always says{" "}
+          <em>no appointments available</em>. Answer two questions — no email, no account,
+          nothing leaves this page — and we&apos;ll tell you which service fits, or whether you
+          should skip all of them.
+        </p>
 
-      {/* Why this exists */}
-      <section className="bg-paper py-16">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-display text-2xl font-bold text-ink mb-4">
-            Why this comparison exists
-          </h2>
-          <div className="font-body text-slate leading-relaxed flex flex-col gap-4">
-            <p>
-              If you&apos;ve applied for Global Entry and checked the official scheduler, you
-              already know the problem: popular enrollment centers can show no open interview
-              slots for months, while people who booked ahead of you cancel or reschedule every
-              single day. Those canceled slots get released back into the system in real time,
-              but they&apos;re usually gone within minutes. Nobody can watch a scheduling page
-              around the clock, so a small industry of alert services exists to do it for you.
-            </p>
-            <p>
-              These services all do roughly the same core job — poll the official scheduler and
-              notify you when a slot opens at a location you picked. Where they differ is price,
-              how many locations you can watch, whether the alert reaches you by text or email,
-              and whether you can filter for specific days of the week. Those differences matter
-              more than they look on a features page, which is why we built the quiz above
-              instead of just a table.
-            </p>
-          </div>
-        </div>
-      </section>
+        <TriageQuiz />
 
-      {/* Comparison table */}
-      <section className="bg-paper-dim py-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="font-display text-2xl font-bold text-ink mb-2">The full comparison</h2>
-          <p className="font-body text-slate mb-6">
-            Checked directly against each service&apos;s own site.
-          </p>
+        <div id="compare" className="pt-14 sm:pt-20">
+          <div className="flex items-baseline justify-between gap-6 flex-wrap mb-5">
+            <h2 className="text-[clamp(24px,2.6vw,30px)] m-0">Or read the full comparison</h2>
+            <span className="text-[15px] text-neutral-700">
+              Five services, checked directly against each one&apos;s own site
+            </span>
+          </div>
           <ComparisonTable />
+          <p className="text-[15px] leading-[26px] mt-5 max-w-[68ch] text-neutral-700">
+            We didn&apos;t take payment for placement on this page. Snapslot is a sister service
+            to GlobalEntryFinder — same team — and where a link earns a referral fee, we say so
+            beside it. None of these services, including Snapslot, book the appointment for you;
+            you always confirm it yourself on the official Trusted Traveler Program website.
+          </p>
         </div>
-      </section>
 
-      {/* How to pick */}
-      <section className="bg-paper py-16">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-display text-2xl font-bold text-ink mb-4">
-            A few things worth knowing before you sign up for any of these
-          </h2>
-          <div className="font-body text-slate leading-relaxed flex flex-col gap-4">
-            <p>
-              Text beats email for this specific job. Cancellation slots can disappear within
-              minutes, and email routinely lands in a spam or promotions folder where nobody
-              checks it fast enough. If speed matters to you, weight SMS-based services more
-              heavily than the comparison table alone suggests.
-            </p>
-            <p>
-              None of these services book the appointment for you. You&apos;ll always confirm it
-              yourself on the official Trusted Traveler Program website using your own login. Be
-              careful of anything that claims otherwise — that would mean handing your government
-              login credentials to a third party, which you should never do.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }

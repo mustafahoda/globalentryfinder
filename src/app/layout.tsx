@@ -1,23 +1,13 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import PressDriver from "@/components/PressDriver";
 
-const display = Space_Grotesk({
+const serif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
-});
-
-const body = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "600"],
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500"],
+  variable: "--font-serif",
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const SITE_URL = "https://www.globalentryfinder.com";
@@ -25,15 +15,15 @@ const SITE_URL = "https://www.globalentryfinder.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "GlobalEntryFinder — Compare Global Entry Appointment Alert Services",
+    default: "GlobalEntryFinder — Which Appointment Finder Should You Use?",
     template: "%s | GlobalEntryFinder",
   },
   description:
-    "A 2-question quiz and a side-by-side comparison of the services that watch the Global Entry scheduler for canceled appointments and alert you the moment one opens.",
+    "Answer two questions and we'll tell you which Global Entry appointment-alert service fits your situation, plus a full price and feature comparison.",
   openGraph: {
-    title: "GlobalEntryFinder — Compare Global Entry Appointment Alert Services",
+    title: "GlobalEntryFinder — Which Appointment Finder Should You Use?",
     description:
-      "A 2-question quiz and a side-by-side comparison of Global Entry appointment alert services.",
+      "Answer two questions and we'll tell you which Global Entry appointment-alert service fits your situation.",
     url: SITE_URL,
     siteName: "GlobalEntryFinder",
   },
@@ -41,8 +31,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="bg-paper text-ink font-body antialiased">{children}</body>
+    <html lang="en" className={serif.variable}>
+      <body className="bg-bg text-ink font-serif antialiased">
+        <PressDriver />
+        {children}
+      </body>
     </html>
   );
 }

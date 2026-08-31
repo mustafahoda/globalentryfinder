@@ -2,28 +2,24 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-paper/60 border-t border-white/10">
-      <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col gap-4 font-mono text-xs">
-        <p>
-          GlobalEntryFinder is an independent comparison resource operated by the same team that
-          built{" "}
-          <a
-            href="https://snapslot.co"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-amber"
-          >
-            Snapslot
-          </a>
-          .
-        </p>
-        <div className="flex items-center gap-4">
-          <Link href="/privacy" className="underline underline-offset-2 hover:text-amber">
-            Privacy Policy
-          </Link>
-          <span>© {new Date().getFullYear()} GlobalEntryFinder</span>
-        </div>
-      </div>
+    <footer className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 pb-16">
+      <p className="text-[13px] leading-6 text-neutral-700 pt-14 border-t border-black/10">
+        globalentryfinder.com is an independent comparison resource operated by the same team
+        that built{" "}
+        <a
+          href="https://snapslot.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:underline"
+        >
+          Snapslot
+        </a>
+        . Not affiliated with U.S. Customs and Border Protection.{" "}
+        <Link href="/privacy" className="text-accent hover:underline">
+          Privacy Policy
+        </Link>
+        .
+      </p>
     </footer>
   );
 }

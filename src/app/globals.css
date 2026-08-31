@@ -2,14 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-sweep,
-  .animate-blip {
-    animation: none !important;
-  }
+body {
+  background: #f3f2f2;
+  color: #201e1d;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+a {
+  text-underline-offset: 3px;
 }
 
 ::selection {
-  background: #ffb020;
-  color: #0b1220;
+  background: rgba(0, 136, 176, 0.3);
+}
+
+:focus-visible {
+  outline: 2px solid #0088b0;
+  outline-offset: 2px;
+}
+
+/**
+ * Misregistered three-plate headline (cyan/magenta/yellow, multiplied) -- a nod to
+ * process-color print separation. Plates lean toward the pointer via --press-nx/--press-ny,
+ * published by PressDriver (see components/PressDriver.tsx); they default to 0 and sit
+ * inert (a static, still-legible triple-image) when JS or motion is unavailable.
+ */
+.cmyk-head {
+  position: relative;
+}
+.cmyk-head .paper {
+  color: #f3f2f2;
+  text-shadow:
+    0.027em 0.0185em 0 #f3f2f2,
+    -0.0245em -0.0175em 0 #f3f2f2;
+}
+.cmyk-head .plate {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  user-select: none;
+}
+.cmyk-head .plate-c {
+  color: #0088b0;
+}
+.cmyk-head .plate-m {
+  color: #d6006c;
+  translate: calc(0.018em + 0.009em * var(--press-nx, 0)) calc(0.0125em + 0.006em * var(--press-ny, 0));
+}
+.cmyk-head .plate-y {
+  color: #edbb00;
+  translate: calc(-0.0155em + 0.009em * var(--press-nx, 0)) calc(-0.0115em + 0.006em * var(--press-ny, 0));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmyk-head .plate {
+    translate: none !important;
+  }
+}
+
+.gef-table {
+  font-feature-settings: "tnum" 1;
+}
+.gef-table th {
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(32, 30, 29, 0.6);
+  padding: 10px;
+  border-bottom: 1px solid rgba(32, 30, 29, 0.16);
+}
+.gef-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid rgba(32, 30, 29, 0.08);
+}
+.gef-table tbody tr:hover {
+  background: rgba(32, 30, 29, 0.04);
+}
+
+@media (max-width: 760px) {
+  .gef-table thead {
+    display: none;
+  }
+  .gef-table tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 12px 0;
+  }
+  .gef-table td {
+    border: 0 !important;
+    padding: 2px 0 !important;
+  }
+  .gef-table td:first-child {
+    grid-column: 1 / -1;
+  }
 }

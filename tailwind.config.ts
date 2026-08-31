@@ -5,37 +5,49 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0B1220",
-        "ink-raised": "#121B2E",
-        paper: "#F6F3EA",
-        "paper-dim": "#EDE8D9",
-        amber: "#FFB020",
-        teal: "#1FA8A0",
-        slate: "#4B5566",
-        coral: "#FF5A5F",
+        bg: "#F3F2F2",
+        surface: "#EAE9E9",
+        ink: "#201E1D",
+        accent: {
+          DEFAULT: "#0088B0",
+          100: "#E9F8FF",
+          200: "#CBEEFF",
+          600: "#1186AC",
+          700: "#006786",
+          800: "#004961",
+        },
+        "accent-2": {
+          DEFAULT: "#D6006C",
+          100: "#FFF1F4",
+          800: "#790E3D",
+        },
+        process: {
+          yellow: "#EDBB00",
+        },
+        neutral: {
+          100: "#F8F4F4",
+          200: "#EAE7E7",
+          300: "#D7D3D3",
+          400: "#BAB6B6",
+          500: "#9B9797",
+          600: "#7D7979",
+          700: "#605D5D",
+          800: "#444141",
+          900: "#2D2B2B",
+        },
       },
       fontFamily: {
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
-        body: ["var(--font-body)", "Georgia", "serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
-      backgroundImage: {
-        "radar-grid":
-          "radial-gradient(circle at center, rgba(255,176,32,0.08) 0%, rgba(255,176,32,0) 70%)",
+      borderRadius: {
+        sm: "1px",
+        md: "2px",
+        lg: "4px",
       },
-      keyframes: {
-        sweep: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
-        },
-        blip: {
-          "0%, 100%": { opacity: "0.35", transform: "scale(0.9)" },
-          "50%": { opacity: "1", transform: "scale(1.15)" },
-        },
-      },
-      animation: {
-        sweep: "sweep 6s linear infinite",
-        blip: "blip 2.4s ease-in-out infinite",
+      boxShadow: {
+        sm: "0 1px 2px rgba(45,43,43,0.14)",
+        md: "0 3px 10px rgba(45,43,43,0.16)",
+        lg: "0 12px 32px rgba(45,43,43,0.22)",
       },
     },
   },
