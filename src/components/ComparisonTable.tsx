@@ -8,7 +8,7 @@ export default function ComparisonTable() {
           <th>Service</th>
           <th>Locations watched</th>
           <th>Delivery</th>
-          <th>Day-of-week filtering</th>
+          <th>Setup</th>
           <th>Price</th>
           <th>Site</th>
         </tr>
@@ -27,11 +27,19 @@ export default function ComparisonTable() {
                     Our pick
                   </span>
                 )}
+                {s.kind === "self-hosted" && (
+                  <span
+                    className="inline-flex items-center text-[11px] tracking-[0.02em] px-2.5 py-[3px] rounded-sm"
+                    style={{ background: "#FFF1F4", color: "#790E3D" }}
+                  >
+                    Self-hosted
+                  </span>
+                )}
               </div>
             </td>
             <td>{s.locations}</td>
             <td>{s.delivery}</td>
-            <td>{s.dayOfWeekFiltering ? "Yes" : "—"}</td>
+            <td className="max-w-[26ch]">{s.setup}</td>
             <td>
               <span
                 className="font-semibold text-[17px]"

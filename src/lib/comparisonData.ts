@@ -14,6 +14,10 @@ export interface ServiceRow {
   freeOptionAvailable: boolean;
   url: string;
   isSnapslot?: boolean;
+  /** "hosted" = a paid/free SaaS you sign up for; "self-hosted" = you run the code yourself. */
+  kind: "hosted" | "self-hosted";
+  /** What it takes to get running -- trivial for hosted services, real work for self-hosted ones. */
+  setup: string;
 }
 
 export const services: ServiceRow[] = [
@@ -27,6 +31,8 @@ export const services: ServiceRow[] = [
     freeOptionAvailable: false,
     url: "https://snapslot.co/signup?utm_source=globalentryfinder&utm_medium=referral&utm_campaign=comparison&utm_content=table",
     isSnapslot: true,
+    kind: "hosted",
+    setup: "None — sign up and go",
   },
   {
     slug: "appointment-scanner",
@@ -37,6 +43,8 @@ export const services: ServiceRow[] = [
     dayOfWeekFiltering: false,
     freeOptionAvailable: false,
     url: "https://appointmentscanner.com",
+    kind: "hosted",
+    setup: "None — sign up and go",
   },
   {
     slug: "ttptracker",
@@ -47,6 +55,8 @@ export const services: ServiceRow[] = [
     dayOfWeekFiltering: true,
     freeOptionAvailable: true,
     url: "https://ttptracker.com",
+    kind: "hosted",
+    setup: "None — sign up and go",
   },
   {
     slug: "ttp-appointments",
@@ -57,6 +67,8 @@ export const services: ServiceRow[] = [
     dayOfWeekFiltering: false,
     freeOptionAvailable: true,
     url: "https://ttpappointments.com",
+    kind: "hosted",
+    setup: "None — sign up and go",
   },
   {
     slug: "global-entry-alerts",
@@ -67,6 +79,32 @@ export const services: ServiceRow[] = [
     dayOfWeekFiltering: false,
     freeOptionAvailable: false,
     url: "https://globalentryalerts.com",
+    kind: "hosted",
+    setup: "None — sign up and go",
+  },
+  {
+    slug: "trusted-traveler-scheduler",
+    name: "trusted-traveler-scheduler (GitHub)",
+    price: "Free — you provide the hosting",
+    locations: "Any — you configure location IDs",
+    delivery: "Discord/webhook, configurable",
+    dayOfWeekFiltering: false,
+    freeOptionAvailable: true,
+    url: "https://github.com/everettsouthwick/trusted-traveler-scheduler",
+    kind: "self-hosted",
+    setup: "Docker image or Python 3.7+; you write the config file and keep it running somewhere",
+  },
+  {
+    slug: "goes-notify",
+    name: "goes-notify (GitHub)",
+    price: "Free — you provide the hosting",
+    locations: "One center + date per config",
+    delivery: "macOS alert, Gmail, or console log",
+    dayOfWeekFiltering: false,
+    freeOptionAvailable: true,
+    url: "https://github.com/Drewster727/goes-notify",
+    kind: "self-hosted",
+    setup: "Python 2 script; most-starred open-source option, but dated and no longer actively developed",
   },
 ];
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import TriageQuiz from "@/components/TriageQuiz";
 import ComparisonTable from "@/components/ComparisonTable";
+import LiveTracker from "@/components/LiveTracker";
 import Footer from "@/components/Footer";
 
 const HEADLINE = "Which appointment finder is right for you?";
@@ -14,7 +15,7 @@ export default function HomePage() {
           Which finder
         </a>
         <a href="#compare" className="text-sm hover:text-accent">
-          All five compared
+          All seven compared
         </a>
         <Link href="/privacy" className="text-sm hover:text-accent">
           Privacy
@@ -37,19 +38,24 @@ export default function HomePage() {
           or whether you should skip all of them.
         </p>
 
+        <LiveTracker />
+
         <TriageQuiz />
 
         <div id="compare" className="pt-14 sm:pt-20">
           <div className="flex items-baseline justify-between gap-6 flex-wrap mb-5">
             <h2 className="text-[clamp(24px,2.6vw,30px)] m-0">Or read the full comparison</h2>
             <span className="text-[15px] text-neutral-700">
-              Five services, checked directly against each one&apos;s own site
+              Five hosted services, plus two open-source tools you run yourself
             </span>
           </div>
           <ComparisonTable />
           <p className="text-[15px] leading-[26px] mt-5 max-w-[68ch] text-neutral-700">
             We didn&apos;t take payment for placement on this page. Snapslot is a sister service
-            to GlobalEntryFinder — same team. None of these services, including Snapslot, book
+            to GlobalEntryFinder — same team. The self-hosted options are free, real, open-source
+            projects, but &quot;free&quot; means you&apos;re the one running the code, keeping it
+            online, and troubleshooting it when it breaks — that&apos;s the trade against paying
+            a hosted service to do it for you. None of these services, including Snapslot, book
             the appointment for you; you always confirm it yourself on the official Trusted
             Traveler Program website.
           </p>
