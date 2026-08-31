@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
-import PressDriver from "@/components/PressDriver";
 
 const serif = Source_Serif_4({
   subsets: ["latin"],
@@ -32,10 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={serif.variable}>
-      <body className="bg-bg text-ink font-serif antialiased">
-        <PressDriver />
-        {children}
-      </body>
+      <body className="bg-bg text-ink font-serif antialiased">{children}</body>
     </html>
   );
 }

@@ -51,8 +51,7 @@ export default function PrivacyPage() {
               Every service on this site — including Snapslot — has its own separate privacy
               policy that governs what happens once you click through to it. We&apos;re not
               responsible for how those third-party sites handle your data; check their own
-              policies before signing up. Some outbound links, marked where they appear, earn us
-              a referral fee at no extra cost to you.
+              policies before signing up.
             </p>
           </section>
 

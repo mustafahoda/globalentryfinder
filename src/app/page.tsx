@@ -27,27 +27,14 @@ export default function HomePage() {
       <main className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 pt-8 sm:pt-12 pb-24">
         <h1
           id="which"
-          className="cmyk-head text-[clamp(34px,5vw,56px)] leading-[1.06] tracking-[-0.02em] m-0 max-w-[24ch] -ml-[0.035em]"
+          className="text-ink text-[clamp(34px,5vw,56px)] leading-[1.06] tracking-[-0.02em] m-0 max-w-[24ch] -ml-[0.035em]"
         >
-          <span className="paper" aria-hidden="true">
-            {HEADLINE}
-          </span>
-          <span className="plate plate-c" aria-hidden="true">
-            {HEADLINE}
-          </span>
-          <span className="plate plate-m" aria-hidden="true">
-            {HEADLINE}
-          </span>
-          <span className="plate plate-y" aria-hidden="true">
-            {HEADLINE}
-          </span>
-          <span className="sr-only">{HEADLINE}</span>
+          {HEADLINE}
         </h1>
         <p className="text-[clamp(17px,1.6vw,19px)] leading-[30px] max-w-[56ch] mt-6 text-neutral-800">
-          You&apos;ve refreshed the Global Entry site for weeks and it always says{" "}
-          <em>no appointments available</em>. Answer two questions — no email, no account,
-          nothing leaves this page — and we&apos;ll tell you which service fits, or whether you
-          should skip all of them.
+          You&apos;ve refreshed the Global Entry site for weeks and it always says no
+          appointments available. Answer two questions and we&apos;ll tell you which service fits,
+          or whether you should skip all of them.
         </p>
 
         <TriageQuiz />
@@ -62,9 +49,9 @@ export default function HomePage() {
           <ComparisonTable />
           <p className="text-[15px] leading-[26px] mt-5 max-w-[68ch] text-neutral-700">
             We didn&apos;t take payment for placement on this page. Snapslot is a sister service
-            to GlobalEntryFinder — same team — and where a link earns a referral fee, we say so
-            beside it. None of these services, including Snapslot, book the appointment for you;
-            you always confirm it yourself on the official Trusted Traveler Program website.
+            to GlobalEntryFinder — same team. None of these services, including Snapslot, book
+            the appointment for you; you always confirm it yourself on the official Trusted
+            Traveler Program website.
           </p>
         </div>
 

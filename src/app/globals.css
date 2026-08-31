@@ -28,46 +28,6 @@ a {
   outline-offset: 2px;
 }
 
-/**
- * Misregistered three-plate headline (cyan/magenta/yellow, multiplied) -- a nod to
- * process-color print separation. Plates lean toward the pointer via --press-nx/--press-ny,
- * published by PressDriver (see components/PressDriver.tsx); they default to 0 and sit
- * inert (a static, still-legible triple-image) when JS or motion is unavailable.
- */
-.cmyk-head {
-  position: relative;
-}
-.cmyk-head .paper {
-  color: #f3f2f2;
-  text-shadow:
-    0.027em 0.0185em 0 #f3f2f2,
-    -0.0245em -0.0175em 0 #f3f2f2;
-}
-.cmyk-head .plate {
-  position: absolute;
-  inset: 0;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  user-select: none;
-}
-.cmyk-head .plate-c {
-  color: #0088b0;
-}
-.cmyk-head .plate-m {
-  color: #d6006c;
-  translate: calc(0.018em + 0.009em * var(--press-nx, 0)) calc(0.0125em + 0.006em * var(--press-ny, 0));
-}
-.cmyk-head .plate-y {
-  color: #edbb00;
-  translate: calc(-0.0155em + 0.009em * var(--press-nx, 0)) calc(-0.0115em + 0.006em * var(--press-ny, 0));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cmyk-head .plate {
-    translate: none !important;
-  }
-}
-
 .gef-table {
   font-feature-settings: "tnum" 1;
 }

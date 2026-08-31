@@ -40,7 +40,7 @@ const SNAPSLOT_PICK: Omit<Recommendation, "line"> = {
   ],
   cta: `Check availability at ${snapslot.name}`,
   href: snapslot.url,
-  note: "Referral fee disclosed. Ranking is unaffected.",
+  note: "Snapslot is a sister service to GlobalEntryFinder — same team.",
 };
 
 const APPLY_FIRST: Omit<Recommendation, "line"> = {
@@ -89,7 +89,7 @@ export const RECOMMENDATIONS: Record<`${Stage}|${Urgency}`, Recommendation> = {
     ],
     cta: `Check ${ttptracker.name}`,
     href: ttptracker.url,
-    note: "No referral relationship — a free tool we think is genuinely good for this case.",
+    note: "A free tool we think is genuinely good for this case.",
   },
   "renewing|today": {
     ...SNAPSLOT_PICK,

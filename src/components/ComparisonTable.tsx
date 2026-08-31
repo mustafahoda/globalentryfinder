@@ -10,6 +10,7 @@ export default function ComparisonTable() {
           <th>Delivery</th>
           <th>Day-of-week filtering</th>
           <th>Price</th>
+          <th>Site</th>
         </tr>
       </thead>
       <tbody>
@@ -38,6 +39,16 @@ export default function ComparisonTable() {
               >
                 {s.price}
               </span>
+            </td>
+            <td>
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
+                Visit {s.name} →
+              </a>
             </td>
           </tr>
         ))}
