@@ -22,7 +22,9 @@ const faqJsonLd = {
     name: item.question,
     acceptedAnswer: {
       "@type": "Answer",
-      text: item.answer,
+      text: item.links
+        ? `${item.answer} ${item.links.map((l) => `${l.label}: ${l.url}`).join(" · ")}`
+        : item.answer,
     },
   })),
 };

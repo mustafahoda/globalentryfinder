@@ -1,7 +1,13 @@
+import { getService } from "./comparisonData";
+
 export interface FaqItem {
   question: string;
   answer: string;
+  links?: { label: string; url: string }[];
 }
+
+const trustedTravelerScheduler = getService("trusted-traveler-scheduler");
+const goesNotify = getService("goes-notify");
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
@@ -17,12 +23,16 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What's the difference between a hosted service and a self-hosted tool?",
     answer:
-      "A hosted service, like Snapslot or the others in the table, is ready to use the moment you sign up. A self-hosted tool is free, open-source code that you install and run yourself — on a spare computer, a VPS, or similar — and keep online, which is real technical work rather than a signup form.",
+      "A hosted service, like Snapslot or the others in the table, is ready to use the moment you sign up. A self-hosted tool is free, open-source code that you install and run yourself — on a spare computer, a VPS, or similar — and keep online, which is real technical work rather than a signup form. If you're technical and want to save the money, consider using one of the self-hosted options below instead.",
+    links: [
+      { label: trustedTravelerScheduler.name, url: trustedTravelerScheduler.url },
+      { label: goesNotify.name, url: goesNotify.url },
+    ],
   },
   {
     question: "Is a browser notification a good way to get Global Entry alerts?",
     answer:
-      "It can be, if the setup fits how you actually use your computer. A browser-based alert (like TTPTracker's free tier) is free and fires instantly while the tab is open — a good fit if you keep a laptop on and awake near you during the hours you're realistically watching. It's a weaker fit if cancellations are likely to post overnight or while you're away from your desk, because the tab has to stay open and your computer has to stay awake to catch them — close the tab, let your laptop sleep, or step away, and you'll miss it entirely. SMS doesn't have that limitation, which is the main trade-off between the two.",
+      "It can be, if the setup fits how you actually use your computer. A browser-based alert (like TTPTracker's free tier) is free and fires instantly while the tab is open. That's a good fit if you keep a laptop on and awake near you during the hours you're realistically watching. It's a weaker fit if cancellations are likely to post overnight or while you're away from your desk, since the tab has to stay open and your computer has to stay awake to catch them. Close the tab, let your laptop sleep, or step away, and you'll miss it entirely. SMS doesn't have that limitation, which is the main trade-off between the two.",
   },
   {
     question: "How does the live tracker on this page work?",

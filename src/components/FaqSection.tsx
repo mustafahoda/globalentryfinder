@@ -32,9 +32,25 @@ export default function FaqSection() {
               style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
             >
               <div className="overflow-hidden">
-                <p className="text-[15px] leading-[26px] text-neutral-800 max-w-[68ch] pb-5 m-0">
+                <p className="text-[15px] leading-[26px] text-neutral-800 max-w-[68ch] m-0">
                   {item.answer}
                 </p>
+                {item.links && (
+                  <div className="flex flex-wrap gap-x-5 gap-y-1 mt-2 pb-5">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[15px] text-accent hover:underline"
+                      >
+                        {link.label} →
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {!item.links && <div className="pb-5" />}
               </div>
             </div>
           </div>
