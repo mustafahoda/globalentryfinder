@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sweep,
+  .animate-blip {
+    animation: none !important;
+  }
+}
+
+::selection {
+  background: #ffb020;
+  color: #0b1220;
+}
