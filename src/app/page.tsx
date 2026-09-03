@@ -3,6 +3,8 @@ import Link from "next/link";
 import TriageQuiz from "@/components/TriageQuiz";
 import ComparisonTable from "@/components/ComparisonTable";
 import LiveTracker from "@/components/LiveTracker";
+import LiveTrackerTicker from "@/components/LiveTrackerTicker";
+import { LiveTrackerProvider } from "@/components/LiveTrackerProvider";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import { FAQ_ITEMS } from "@/lib/faqData";
@@ -85,19 +87,29 @@ export default function HomePage() {
           or whether you should skip all of them.
         </p>
 
-        <LiveTracker />
+        <LiveTrackerProvider>
+          <LiveTrackerTicker />
 
-        <TriageQuiz />
+          <TriageQuiz />
 
-        <div id="compare" className="pt-14 sm:pt-20">
-          <div className="flex items-baseline justify-between gap-6 flex-wrap mb-5">
-            <h2 className="text-[clamp(24px,2.6vw,30px)] m-0">Or read the full comparison</h2>
-            <span className="text-[15px] text-neutral-700">
-              Six hosted services, plus two open-source tools you run yourself
-            </span>
+          <div id="compare" className="pt-14 sm:pt-20">
+            <div className="flex items-baseline justify-between gap-6 flex-wrap mb-5">
+              <h2 className="text-[clamp(24px,2.6vw,30px)] m-0">Or read the full comparison</h2>
+              <span className="text-[15px] text-neutral-700">
+                Six hosted services, plus two open-source tools you run yourself
+              </span>
+            </div>
+            <p className="text-[14px] leading-[22px] text-neutral-700 max-w-[68ch]">
+              The live tracker below polls the same official scheduler these services watch —
+              it's the data the table's speed claims are based on, running visibly in your
+              browser instead of on a server.
+            </p>
+            <LiveTracker />
+            <div className="mt-6">
+              <ComparisonTable />
+            </div>
           </div>
-          <ComparisonTable />
-        </div>
+        </LiveTrackerProvider>
 
         <div id="faq" className="pt-14 sm:pt-20">
           <h2 className="text-[clamp(24px,2.6vw,30px)] m-0 mb-5">Frequently asked questions</h2>
