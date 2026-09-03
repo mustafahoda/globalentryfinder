@@ -1,8 +1,11 @@
 import type { MetadataRoute } from "next";
+import { getPublishedPosts } from "@/lib/blogData";
 
 const SITE_URL = "https://globalentryfinder.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = getPublishedPosts();
+
   return [
     {
       url: SITE_URL,
@@ -10,6 +13,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    ...posts.map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.publishedAt as string),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     {
       url: `${SITE_URL}/privacy`,
       lastModified: new Date(),

@@ -61,6 +61,9 @@ export default function HomePage() {
         <a href="#faq" className="text-sm hover:text-accent">
           FAQ
         </a>
+        <Link href="/blog" className="text-sm hover:text-accent">
+          Blog
+        </Link>
         <Link href="/privacy" className="text-sm hover:text-accent">
           Privacy
         </Link>
