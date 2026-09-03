@@ -24,7 +24,7 @@ export default function BlogIndexPage() {
 
   return (
     <div className="min-h-screen">
-      <nav className="flex items-center gap-8 py-4 px-5 sm:px-8 md:px-16">
+      <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 py-4 px-5 sm:gap-x-8 sm:px-8 md:px-16">
         <Link href="/" className="font-semibold text-lg mr-auto">
           GlobalEntryFinder
         </Link>

@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: #f3f2f2;
   color: #201e1d;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 h1,

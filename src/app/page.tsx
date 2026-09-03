@@ -50,7 +50,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <nav className="flex items-center gap-8 py-4 px-5 sm:px-8 md:px-16">
+      <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 py-4 px-5 sm:gap-x-8 sm:px-8 md:px-16">
         <span className="font-semibold text-lg mr-auto">GlobalEntryFinder</span>
         <a href="#which" className="text-sm hover:text-accent">
           Quiz
